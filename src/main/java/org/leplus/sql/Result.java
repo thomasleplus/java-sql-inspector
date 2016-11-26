@@ -92,4 +92,13 @@ public class Result implements Cloneable, Serializable, Comparable<Result> {
 		return line + ":" + column + ":" + value;
 	}
 
+	@Override
+	protected Result clone() {
+		try {
+			return (Result) super.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new AssertionError(e);
+		}
+	}
+
 }

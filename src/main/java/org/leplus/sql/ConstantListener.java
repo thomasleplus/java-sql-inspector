@@ -8,7 +8,7 @@ import org.leplus.antlr4.PLSQLParser.ConstantContext;
 
 public class ConstantListener extends PLSQLBaseListener {
 
-	private final List<Result> results = new ArrayList<Result>();
+	private final List<Result> results = new ArrayList<>();
 
 	private void addResult(ConstantContext ctx) {
 		final Result result = new Result();
