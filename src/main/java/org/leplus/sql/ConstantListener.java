@@ -8,14 +8,18 @@ import org.leplus.antlr4.PLSQLParser.ConstantContext;
 
 public class ConstantListener extends PLSQLBaseListener {
 
+	private static final String NULL = "NULL";
+
 	private final List<Result> results = new ArrayList<>();
 
 	private void addResult(ConstantContext ctx) {
-		final Result result = new Result();
-		result.setValue(ctx.getText());
-		result.setLine(ctx.getStart().getLine());
-		result.setColumn(ctx.getStart().getStartIndex());
-		results.add(result);
+		if (!NULL.equalsIgnoreCase(ctx.getText())) {
+			final Result result = new Result();
+			result.setValue(ctx.getText());
+			result.setLine(ctx.getStart().getLine());
+			result.setColumn(ctx.getStart().getStartIndex());
+			results.add(result);
+		}
 	}
 
 	@Override

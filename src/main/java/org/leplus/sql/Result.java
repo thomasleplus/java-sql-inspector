@@ -15,6 +15,15 @@ public class Result implements Cloneable, Serializable, Comparable<Result> {
 	}
 
 	@Override
+	protected Result clone() {
+		try {
+			return (Result) super.clone();
+		} catch (final CloneNotSupportedException e) {
+			throw new AssertionError(e);
+		}
+	}
+
+	@Override
 	public int compareTo(Result o) {
 		if (line != o.line) {
 			return line - o.line;
@@ -90,15 +99,6 @@ public class Result implements Cloneable, Serializable, Comparable<Result> {
 	@Override
 	public String toString() {
 		return line + ":" + column + ":" + value;
-	}
-
-	@Override
-	protected Result clone() {
-		try {
-			return (Result) super.clone();
-		} catch (CloneNotSupportedException e) {
-			throw new AssertionError(e);
-		}
 	}
 
 }
