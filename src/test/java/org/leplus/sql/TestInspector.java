@@ -6,6 +6,7 @@ import static org.leplus.sql.InspectorAssertions.constant;
 import static org.leplus.sql.InspectorAssertions.constantsOf;
 import static org.leplus.sql.InspectorAssertions.isEmpty;
 
+import org.antlr.v4.runtime.RecognitionException;
 import org.junit.Test;
 
 public class TestInspector {
@@ -123,6 +124,11 @@ public class TestInspector {
 		assertThat(constantsOf("DELETE FROM foo WHERE bar = 'x'"), are(constant(1, 28, "'x'")));
 		assertThat(constantsOf("DELETE FROM foo WHERE bar = 'x' + 'y'"),
 				are(constant(1, 28, "'x'"), constant(1, 34, "'y'")));
+	}
+
+	@Test(expected = RecognitionException.class)
+	public void testFindConstantsRecognitionException() {
+		constantsOf("FOO BAR");
 	}
 
 }
