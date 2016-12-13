@@ -3,20 +3,23 @@ sudo: false
 install: true
 
 jdk:
-- oraclejdk8
+  - oraclejdk7
+  - openjdk7
+  - oraclejdk8
+  - openjdk8
 
 script:
-- "./runSonarQubeAnalysis.sh"
+  - "./runSonarQubeAnalysis.sh"
 
 cache:
   directories:
-  - "${HOME}/.m2/repository"
-  - "${HOME}/.sonar/cache"
+    - "${HOME}/.m2/repository"
+    - "${HOME}/.sonar/cache"
 
 notifications:
   email: true
 
 env:
   global:
-  - secure: q+j44Li7ZV/1Ab2DVoo5VFjSrhijUQzs59DynBB4E+/XJVqNGtBZPCBmLTRZ3JzHuW25u1RDDPkrBPc8ZPCujd2wmD4FeoRuQUVNxcwcvGQecXJ31DIChUYkZQHsdnUHZYmtC8Wy8i/rEBlWtHR04LcH2xzqq3+Xb/aFFL0xwl54OWMgklIuIYTzRqy5ZsD15ThQqUIsTbf+CT50U5KxfA7NqeO9Z/ZcBoHgDouvnoCfwBYbypmcaCIi4uj4ixVwuXJ+BPRbbMxjd3R8vR6VPJXHU5XjShURHxcbFNqxxwHv0t+swnG5/4pf7hPxXkFuGQOeUQRlzTFgcikLYS3IWH+6+JS4kBR1PUz+ElOC0IzBfMv4KyBjhzAvuFs5Rwpur3rYcxGikM/i8wauYG9RmVWHPtoICtu5FJerbepn7gX+Jfok98y1BahX6fRdW4uGqp82dR86490eu3C+E6bXyZpG4vdfTnTSWaszWQ1fMzYkzI+UHoVwqgnpNcCzZ1LILsfKHIfNLETkXtC1i1Wo8OJBzkxizPiYBHdT2sGpQVLbaYGbFHkmdXkvibtrvEYjkpWh8UrDIBNHqGm9Xsy/Z0qwkry0VUfsn53J1edWZ2Ztjt63chrEISw3Z+892Fs+WjaKVG4I24qagX6aznCDubXSn34HCi1/hWGxNkUI/Ek=
-  - SONAR_HOST_URL=https://sonarqube.com
+    - secure: q+j44Li7ZV/1Ab2DVoo5VFjSrhijUQzs59DynBB4E+/XJVqNGtBZPCBmLTRZ3JzHuW25u1RDDPkrBPc8ZPCujd2wmD4FeoRuQUVNxcwcvGQecXJ31DIChUYkZQHsdnUHZYmtC8Wy8i/rEBlWtHR04LcH2xzqq3+Xb/aFFL0xwl54OWMgklIuIYTzRqy5ZsD15ThQqUIsTbf+CT50U5KxfA7NqeO9Z/ZcBoHgDouvnoCfwBYbypmcaCIi4uj4ixVwuXJ+BPRbbMxjd3R8vR6VPJXHU5XjShURHxcbFNqxxwHv0t+swnG5/4pf7hPxXkFuGQOeUQRlzTFgcikLYS3IWH+6+JS4kBR1PUz+ElOC0IzBfMv4KyBjhzAvuFs5Rwpur3rYcxGikM/i8wauYG9RmVWHPtoICtu5FJerbepn7gX+Jfok98y1BahX6fRdW4uGqp82dR86490eu3C+E6bXyZpG4vdfTnTSWaszWQ1fMzYkzI+UHoVwqgnpNcCzZ1LILsfKHIfNLETkXtC1i1Wo8OJBzkxizPiYBHdT2sGpQVLbaYGbFHkmdXkvibtrvEYjkpWh8UrDIBNHqGm9Xsy/Z0qwkry0VUfsn53J1edWZ2Ztjt63chrEISw3Z+892Fs+WjaKVG4I24qagX6aznCDubXSn34HCi1/hWGxNkUI/Ek=
+    - SONAR_HOST_URL=https://sonarqube.com
