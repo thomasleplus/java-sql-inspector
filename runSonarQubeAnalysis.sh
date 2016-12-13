@@ -2,8 +2,9 @@
 # Exit on failure
 set -e
 
-# Only run Sonar on one JDK
-if [[ ${JAVA_HOME} != *"java-8-oracle"* ]];then
+# Only run Sonar with Java 8
+JAVA_VERSION=$(javac -J-Xmx32m -version 2>&1 | sed -e 's/^javac \([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/;')
+if [[ "$JAVA_VERSION" < "1.8" ]]; then
     exit 0
 fi
 
