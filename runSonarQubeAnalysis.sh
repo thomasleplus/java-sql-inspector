@@ -2,6 +2,8 @@
 # Exit on failure
 set -e
 
+echo $JAVA_HOME
+
 # This assumes that the 2 following variables are defined:
 # - SONAR_HOST_URL => should point to the public URL of the SQ server (e.g. for Nemo: https://nemo.sonarqube.org)
 # - SONAR_TOKEN    => token of a user who has the "Execute Analysis" permission on the SQ server
