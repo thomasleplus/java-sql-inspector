@@ -1,15 +1,13 @@
 package org.leplus.sql;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.Assert.assertThat;
 import static org.leplus.sql.InspectorAssertions.are;
 import static org.leplus.sql.InspectorAssertions.constant;
 import static org.leplus.sql.InspectorAssertions.constantsOf;
 import static org.leplus.sql.InspectorAssertions.isEmpty;
 
 import org.antlr.v4.runtime.RecognitionException;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
+import org.junit.Test;
 
 public class TestInspector {
 
@@ -128,15 +126,9 @@ public class TestInspector {
 				are(constant(1, 28, "'x'"), constant(1, 34, "'y'")));
 	}
 
-	@Test
+	@Test(expected = RecognitionException.class)
 	public void testFindConstantsRecognitionException() {
-		// Use a lambda here once dropped support for java 6 & 7
-		assertThrows(RecognitionException.class, new Executable() {
-			@Override
-			public void execute() throws Throwable {
-				constantsOf("FOO BAR");
-			}
-		});
+		constantsOf("FOO BAR");
 	}
 
 }
