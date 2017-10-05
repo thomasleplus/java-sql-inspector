@@ -2,7 +2,7 @@ package org.leplus.sql;
 
 import java.io.Serializable;
 
-public class Result implements Cloneable, Serializable, Comparable<Result> {
+public class Result implements Serializable, Comparable<Result> {
 
 	private static final long serialVersionUID = 2722874450358413200L;
 
@@ -14,13 +14,11 @@ public class Result implements Cloneable, Serializable, Comparable<Result> {
 		super();
 	}
 
-	@Override
-	protected Result clone() {
-		try {
-			return (Result) super.clone();
-		} catch (final CloneNotSupportedException e) {
-			throw new AssertionError(e);
-		}
+	public Result(Result model) {
+		this();
+		this.value = model.value;
+		this.line = model.line;
+		this.column = model.column;
 	}
 
 	@Override
