@@ -1,8 +1,4 @@
 # Java SQL Inspector
 Utility to test Java code for SQL injection vulnerabilities.
 
-[Travis CI](https://travis-ci.org/thomasleplus/java-sql-inspector)
-
-<a href="https://travis-ci.org/thomasleplus/java-sql-inspector"><img src="https://api.travis-ci.org/thomasleplus/java-sql-inspector.png"></a>
-
-[SonarQube](https://sonarqube.com/dashboard/index?id=org.leplus%3Ajava-sql-inspector)
+[![Build status](https://travis-ci.org/thomasleplus/java-sql-inspector.svg?branch=master)](https://travis-ci.org/thomasleplus/java-sql-inspector) [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=org.leplus:java-sql-inspector)](https://sonarcloud.io/dashboard/index/org.leplus:java-sql-inspector)
