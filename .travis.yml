@@ -10,7 +10,7 @@ jdk:
 
 addons:
   sonarcloud:
-    organization: "thomasleplus-github"
+    organization: "default"
     token:
         secure: "w2c7AFy5hjOff71svXCQ1Zul4u5k5qZBQpEagr4ACUf0/m06G1rFKs8ZxTJJKcc1y/HF6oDtS9lFhDLrIZwTsVMHvg9eDGKR7UPxubMtQPzyVRIT5I7URO+FSMlk+2Rp4IweyCRkriMu8Fgq6Q2iPPbhu1C8RqVdC3/5wjtL68IS66T0LymRrJBH89i12a+XAn+P8xoAg1nK3Fo1kg7UcHPAWAyNez8ouyBBQ/fXhHRJI+s7XtJOZKHrPWLySFnLL8ZeXNV4AvfS0q8qjlZQ/b3SejpODE4mMaDXj1a+ZvLSZ5RUoYoY1PETZ/06m73UmnM/OGakk+7ke9ClULYWbfaQM7miozz4yN68fBXe+pxwXE1JLNZbRdQBwG36OUkAhWMqZIx1Kb0PDhvr52WGmWZZ6I1FyzXHReoU2Cull6JWYrTz2BCchOhnWK02aTrJUvZTWYh5+1xeLtPuRuzjNf9J1JjDyuFI1YRHM7EW/TYHiezMHBvuyG96PfKTY2Gm8vNSjA9XlLuYfTVcKY7ITwbqPnHH7cHxe4QmWhIb2l/KoZccMVWzNQWFBlq0Q39QuCYqGru+1eUgUR4nl43nYh+mV4GQqYmNiBcuSeKtXDrWtXzBRSUlFqBFGwuUHL2C58WXWyMrMBg8ZZ2WIyIsfCLMgLqr/q37T9YnOpmO/ZY="
 
@@ -24,7 +24,3 @@ cache:
 
 notifications:
   email: true
-
-env:
-  global:
-    - SONAR_HOST_URL=https://sonarqube.com
