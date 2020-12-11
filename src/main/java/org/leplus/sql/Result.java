@@ -14,15 +14,15 @@ public class Result implements Serializable, Comparable<Result> {
 		super();
 	}
 
-	public Result(Result model) {
+	public Result(final Result model) {
 		this();
-		this.value = model.value;
-		this.line = model.line;
-		this.column = model.column;
+		value = model.value;
+		line = model.line;
+		column = model.column;
 	}
 
 	@Override
-	public int compareTo(Result o) {
+	public int compareTo(final Result o) {
 		if (line != o.line) {
 			return line - o.line;
 		}
@@ -33,7 +33,7 @@ public class Result implements Serializable, Comparable<Result> {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 		if (this == obj) {
 			return true;
 		}
@@ -82,15 +82,15 @@ public class Result implements Serializable, Comparable<Result> {
 		return result;
 	}
 
-	public void setColumn(int column) {
+	public void setColumn(final int column) {
 		this.column = column;
 	}
 
-	public void setLine(int line) {
+	public void setLine(final int line) {
 		this.line = line;
 	}
 
-	public void setValue(String value) {
+	public void setValue(final String value) {
 		this.value = value;
 	}
 

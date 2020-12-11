@@ -14,7 +14,7 @@ public class Inspector {
 		super();
 	}
 
-	public List<Result> findConstants(String sqlStatement) {
+	public List<Result> findConstants(final String sqlStatement) {
 		final PLSQLLexer lexer = new PLSQLLexer(CharStreams.fromString(sqlStatement));
 		final CommonTokenStream tokens = new CommonTokenStream(lexer);
 		final PLSQLParser parser = new PLSQLParser(tokens);
