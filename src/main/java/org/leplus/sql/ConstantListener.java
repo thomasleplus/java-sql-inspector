@@ -12,7 +12,7 @@ public class ConstantListener extends PLSQLBaseListener {
 
 	private final List<Result> results = new ArrayList<>();
 
-	private void addResult(ConstantContext ctx) {
+	private void addResult(final ConstantContext ctx) {
 		if (!NULL.equalsIgnoreCase(ctx.getText())) {
 			final Result result = new Result();
 			result.setValue(ctx.getText());
@@ -23,7 +23,7 @@ public class ConstantListener extends PLSQLBaseListener {
 	}
 
 	@Override
-	public void enterConstant(ConstantContext ctx) {
+	public void enterConstant(final ConstantContext ctx) {
 		addResult(ctx);
 	}
 

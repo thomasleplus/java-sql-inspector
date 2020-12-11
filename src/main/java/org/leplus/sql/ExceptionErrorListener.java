@@ -11,8 +11,8 @@ public class ExceptionErrorListener extends BaseErrorListener {
 	}
 
 	@Override
-	public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine,
-			String msg, RecognitionException e) {
+	public void syntaxError(final Recognizer<?, ?> recognizer, final Object offendingSymbol, final int line,
+			final int charPositionInLine, final String msg, final RecognitionException e) {
 		throw e;
 	}
 
