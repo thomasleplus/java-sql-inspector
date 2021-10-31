@@ -1,13 +1,14 @@
 package org.leplus.sql;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.leplus.sql.InspectorAssertions.are;
 import static org.leplus.sql.InspectorAssertions.constant;
 import static org.leplus.sql.InspectorAssertions.constantsOf;
 import static org.leplus.sql.InspectorAssertions.isEmpty;
 
 import org.antlr.v4.runtime.RecognitionException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TestInspector {
 
@@ -128,7 +129,7 @@ public class TestInspector {
 
 	@Test
 	public void testFindConstantsRecognitionException() {
-	    Assertions.assertThrows(RecognitionException.class, () -> {
+	    assertThrows(RecognitionException.class, () -> {
 		constantsOf("FOO BAR");
 	    });
 	}
