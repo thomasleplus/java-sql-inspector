@@ -126,9 +126,11 @@ public class TestInspector {
 				are(constant(1, 28, "'x'"), constant(1, 34, "'y'")));
 	}
 
-	@Test(expected = RecognitionException.class)
+	@Test
 	public void testFindConstantsRecognitionException() {
+	    Assertions.assertThrows(RecognitionException.class, () -> {
 		constantsOf("FOO BAR");
+	    });
 	}
 
 }
