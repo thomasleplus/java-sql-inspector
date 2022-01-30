@@ -1,10 +1,5 @@
 ---
-# This workflow will build a Java project with Maven
-# For more information see:
-# https://help.github.com/actions/language-and-framework-guides
-# /building-and-testing-java-with-maven
-
-name: Maven
+name: Maven Dependency Check
 
 on:
   push:
@@ -35,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11, 17]
+        java: [8]
     name: Java ${{ matrix.java }}
     steps:
       - uses: actions/checkout@v2
@@ -44,17 +39,5 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
-      - name: Build with Maven
-        run: ./mvnw verify
-      - name: Scan with SonarCloud
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: ${{ matrix.java == 11 && env.SONAR_TOKEN != '' }}
-        run: ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      - name: Upload artifacts
-        if: ${{ matrix.java == 8 }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: java-sql-inspector
-          path: target/
+      - name: Maven Dependency Check
+        run: ./maven-dependency-check.sh
