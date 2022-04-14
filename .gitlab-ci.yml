@@ -27,18 +27,10 @@ cache:
 
 versions:
   image:
-    name: maven:3-openjdk-8
+    name: maven:3-openjdk-11
   stage: lint
   script: './maven-dependency-check.sh'
   timeout: 10 minutes
-
-verify:openjdk8:
-  stage: test
-  image: maven:3-openjdk-8
-  script:
-    - './mvnw $MAVEN_CLI_OPTS verify'
-  only:
-    - master
 
 verify:openjdk11:
   stage: test
