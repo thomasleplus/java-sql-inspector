@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11, 17]
+        java: [11, 17]
     name: Java ${{ matrix.java }}
     steps:
       - uses: actions/checkout@v3
@@ -53,7 +53,7 @@ jobs:
         if: ${{ matrix.java == 11 && env.SONAR_TOKEN != '' }}
         run: ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - name: Upload artifacts
-        if: ${{ matrix.java == 8 }}
+        if: ${{ matrix.java == 11 }}
         uses: actions/upload-artifact@v3
         with:
           name: java-sql-inspector
