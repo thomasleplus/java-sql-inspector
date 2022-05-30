@@ -1,6 +1,7 @@
 package org.leplus.sql;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.leplus.antlr4.PLSQLBaseListener;
@@ -28,7 +29,7 @@ public class ConstantListener extends PLSQLBaseListener {
 	}
 
 	public List<Result> getResults() {
-		return results;
+		return Collections.unmodifiableList(results);
 	}
 
 }
