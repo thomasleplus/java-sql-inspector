@@ -6,8 +6,10 @@ install: true
 jdk:
   - openjdk11
   - openjdk17
+  - openjdk19
   - oraclejdk11
   - oraclejdk17
+  - oraclejdk19
 
 cache:
   directories:
