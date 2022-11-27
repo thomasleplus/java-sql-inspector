@@ -27,9 +27,8 @@ cache:
 
 versions:
   image:
-    name: maven:3-openjdk-11
+    name: leplusorg/maven-check-versions:latest
   stage: lint
-  script: './maven-dependency-check.sh'
   timeout: 10 minutes
 
 verify:openjdk11:
