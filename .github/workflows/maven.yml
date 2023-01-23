@@ -46,12 +46,6 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build with Maven
         run: ./mvnw verify
-      - name: Scan with SonarCloud
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: ${{ matrix.java == 11 && env.SONAR_TOKEN != '' }}
-        run: ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - name: Upload artifacts
         if: ${{ matrix.java == 11 }}
         uses: actions/upload-artifact@v3
