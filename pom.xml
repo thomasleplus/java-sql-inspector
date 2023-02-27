@@ -66,6 +66,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.version}</maven.compiler.release>
     <antlr4.version>4.12.0</antlr4.version>
+    <dependencyCheck.version>8.1.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
   </properties>
