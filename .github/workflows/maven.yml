@@ -50,7 +50,7 @@ jobs:
           ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.skip=true verify
       - name: Upload artifacts
         if: ${{ matrix.java == 11 }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java-sql-inspector
           path: target/
