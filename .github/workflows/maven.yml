@@ -52,7 +52,7 @@ jobs:
           ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.skip=true verify
       - name: Upload artifacts
         if: ${{ matrix.java == 11 }}
-        uses: actions/upload-artifact@84480863f228bb9747b473957fcc9e309aa96097 # v4.4.2
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           name: ${{ env.REPOSITORY }}
           path: target/
