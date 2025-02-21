@@ -12,6 +12,10 @@ release.properties
 .settings/
 build/
 
+# IntelliJ stuff #
+.idea/
+out/
+
 # Java Classes #
 *.class
 
