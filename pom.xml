@@ -61,10 +61,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>11</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <java.minVersion>11</java.minVersion>
     <antlr4.version>4.13.2</antlr4.version>
     <dependencyCheck.version>12.1.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
@@ -108,7 +105,7 @@
                   <version>3.6.3</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>1.8</version>
+                  <version>${java.minVersion}</version>
                 </requireJavaVersion>
                 <requireOS>
                   <family>unix</family>
@@ -123,9 +120,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <release>8</release>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>${java.minVersion}</release>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
         </configuration>
