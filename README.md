@@ -237,3 +237,7 @@ See [SECURITY.md](SECURITY.md) for information about reporting security vulnerab
 
 - ANTLR 4 for the parsing framework
 - PL/SQL grammar contributors
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
