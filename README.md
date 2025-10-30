@@ -60,7 +60,8 @@ public class Example {
 ```
 
 **Output:**
-```
+
+```text
 Found constant at line 1, column 32: 123
 Found constant at line 1, column 46: 'John'
 ```
@@ -83,6 +84,7 @@ stmt.setString(2, "John");
 ### Additional Examples
 
 **Empty Results** (no vulnerabilities):
+
 ```java
 inspector.findConstants("SELECT * FROM users"); // Returns empty list
 inspector.findConstants("SELECT * FROM users WHERE id = ?"); // Returns empty list
@@ -90,6 +92,7 @@ inspector.findConstants("SELECT * FROM users WHERE status IS NULL"); // Returns 
 ```
 
 **Multiple Constants**:
+
 ```java
 String sql = "SELECT * FROM products WHERE price BETWEEN 10 AND 100";
 List<Result> results = inspector.findConstants(sql);
@@ -97,6 +100,7 @@ List<Result> results = inspector.findConstants(sql);
 ```
 
 **LIKE Patterns**:
+
 ```java
 String sql = "SELECT * FROM users WHERE email LIKE '%@example.com'";
 List<Result> results = inspector.findConstants(sql);
@@ -104,6 +108,7 @@ List<Result> results = inspector.findConstants(sql);
 ```
 
 **Arithmetic Expressions**:
+
 ```java
 String sql = "UPDATE accounts SET balance = balance - 50 WHERE id = 1";
 List<Result> results = inspector.findConstants(sql);
@@ -115,6 +120,7 @@ List<Result> results = inspector.findConstants(sql);
 ### Inspector Class
 
 **Method:**
+
 ```java
 public List<Result> findConstants(String sqlStatement)
 ```
@@ -130,6 +136,7 @@ Parses the provided SQL statement and returns a list of all detected constants.
 Represents a detected constant in the SQL statement.
 
 **Methods:**
+
 - `int getLine()` - Returns the line number (1-based)
 - `int getColumn()` - Returns the column position (0-based start index)
 - `String getValue()` - Returns the literal value (e.g., `"123"`, `"'text'"`)
@@ -144,10 +151,10 @@ The tool supports PL/SQL syntax including:
 - **DML Operations**: SELECT, INSERT, UPDATE, DELETE
 - **WHERE Clauses**: All comparison operators (=, !=, <>, >, <, >=, <=)
 - **Logical Operators**: AND, OR
-- **Pattern Matching**: LIKE with '%' and '_' wildcards
+- **Pattern Matching**: LIKE with '%' and '\_' wildcards
 - **Range Queries**: BETWEEN operator
 - **List Matching**: IN operator
-- **Arithmetic**: +, -, *, / operations in expressions
+- **Arithmetic**: +, -, \*, / operations in expressions
 
 ## Building from Source
 
@@ -166,6 +173,7 @@ Install to your local Maven repository:
 ```
 
 The build includes:
+
 - JaCoCo code coverage analysis
 - PMD code quality checks
 - SpotBugs + FindSecBugs security scanning
@@ -191,6 +199,7 @@ Run all quality checks:
 ```
 
 This executes:
+
 - Unit tests with JUnit 5
 - Code coverage reporting (JaCoCo)
 - Static analysis (PMD, SpotBugs)
