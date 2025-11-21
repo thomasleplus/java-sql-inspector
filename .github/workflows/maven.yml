@@ -46,6 +46,7 @@ jobs:
           echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Set SOURCE_DATE_EPOCH
         run: |

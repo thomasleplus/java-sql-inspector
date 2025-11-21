@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Check the versions
         uses: docker://leplusorg/maven-check-versions:3.9.11@sha256:cabe45dc45c644032ba61b2f43e304baf382e834efe76d74a81c666b893c5dc2
