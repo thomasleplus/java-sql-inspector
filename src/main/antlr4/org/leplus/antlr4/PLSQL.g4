@@ -567,7 +567,7 @@ subtype_declaration
     : SUBTYPE type_name IS type_spec (RANGE expression '..' expression)? (NOT NULL)? ';'
     ;
 
-//cursor_declaration incorportates curscursor_body and cursor_spec
+//cursor_declaration incorporates curscursor_body and cursor_spec
 cursor_declaration
     : CURSOR cursor_name ('(' parameter_spec (',' parameter_spec)* ')' )? (RETURN type_spec)? (IS select_statement)? ';'
     ;
@@ -870,12 +870,12 @@ savepoint_statement
 // Dml
 
 /* TODO
-//SHOULD BE OVERRIDEN!
+//SHOULD BE OVERRIDDEN!
 compilation_unit
     :  seq_of_statements* EOF
     ;
 
-//SHOULD BE OVERRIDEN!
+//SHOULD BE OVERRIDDEN!
 seq_of_statements 
     : select_statement
     | update_statement
@@ -954,7 +954,7 @@ table_ref_list
 // NOTE to PIVOT clause
 // according the SQL reference this should not be possible
 // according to he reality it is. Here we probably apply pivot/unpivot onto whole join clause
-// eventhough it is not enclosed in parenthesis. See pivot examples 09,10,11
+// even though it is not enclosed in parenthesis. See pivot examples 09,10,11
 table_ref
     : table_ref_aux join_clause* (pivot_clause | unpivot_clause)?
     ;
@@ -3148,8 +3148,8 @@ fragment QS_PAREN   : QUOTE '(' .*? ')' QUOTE ;
 
 fragment QS_OTHER_CH: ~('<' | '{' | '[' | '(' | ' ' | '\t' | '\n' | '\r');
 /*fragment QS_OTHER:
-    QUOTE QS_OTHER_CH { delimeter = _input.La(-1); }
-    (. { _input.La(-1) != delimeter }? )* QS_OTHER_CH QUOTE;*/
+    QUOTE QS_OTHER_CH { delimiter = _input.La(-1); }
+    (. { _input.La(-1) != delimiter }? )* QS_OTHER_CH QUOTE;*/
 /*fragment QS_OTHER
 //    For C target we have to preserve case sensitivity.
 //		@declarations {
@@ -3487,7 +3487,7 @@ SQL92_RESERVED_END
 
 SQL92_RESERVED_EXCEPTION
     : 'exception'
-/* TODO    // "exception" is a keyword only withing the contex of the PL/SQL language
+/* TODO    // "exception" is a keyword only within the context of the PL/SQL language
     // while it can be an identifier(column name, table name) in SQL
     // "exception" is a keyword if and only it is followed by "when"
     {
