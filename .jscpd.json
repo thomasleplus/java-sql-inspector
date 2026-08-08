@@ -1,0 +1,3 @@
+{
+  "ignore": [".gitlab-ci.yml", ".m2/**"]
+}
