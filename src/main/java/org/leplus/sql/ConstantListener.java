@@ -6,6 +6,11 @@ import java.util.List;
 import org.leplus.antlr4.PLSQLBaseListener;
 import org.leplus.antlr4.PLSQLParser.ConstantContext;
 
+/**
+ * ANTLR listener that collects the literal constants of a PL/SQL parse tree.
+ * {@code NULL} literals are skipped, since they denote absence rather than a
+ * value.
+ */
 public class ConstantListener extends PLSQLBaseListener {
 
   private static final String NULL = "NULL";
@@ -27,6 +32,9 @@ public class ConstantListener extends PLSQLBaseListener {
     addResult(ctx);
   }
 
+  /**
+   * @return an unmodifiable view of the constants collected so far.
+   */
   public List<Result> getResults() {
     return Collections.unmodifiableList(results);
   }
