@@ -7,9 +7,8 @@ import org.leplus.antlr4.PLSQLBaseListener;
 import org.leplus.antlr4.PLSQLParser.ConstantContext;
 
 /**
- * ANTLR listener that collects the literal constants of a PL/SQL parse tree.
- * {@code NULL} literals are skipped, since they denote absence rather than a
- * value.
+ * ANTLR listener that collects the literal constants of a PL/SQL parse tree. {@code NULL} literals
+ * are skipped, since they denote absence rather than a value.
  */
 public class ConstantListener extends PLSQLBaseListener {
 

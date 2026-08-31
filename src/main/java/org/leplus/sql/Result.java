@@ -3,8 +3,8 @@ package org.leplus.sql;
 import java.io.Serializable;
 
 /**
- * A literal constant found in a SQL statement: its text value and its position.
- * Ordered by line, then column, then value.
+ * A literal constant found in a SQL statement: its text value and its position. Ordered by line,
+ * then column, then value.
  */
 public class Result implements Serializable, Comparable<Result> {
 

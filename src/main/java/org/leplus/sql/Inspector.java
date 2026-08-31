@@ -15,9 +15,8 @@ public class Inspector {
   }
 
   /**
-   * Parses a SQL statement and returns the literal constants it contains, in
-   * source order. Parsing fails fast: the first syntax error is rethrown (see
-   * {@link ExceptionErrorListener}).
+   * Parses a SQL statement and returns the literal constants it contains, in source order. Parsing
+   * fails fast: the first syntax error is rethrown (see {@link ExceptionErrorListener}).
    *
    * @param sqlStatement the SQL text to inspect.
    * @return the constants found.
