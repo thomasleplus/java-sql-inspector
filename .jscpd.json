@@ -1,3 +1,8 @@
 {
-  "ignore": [".gitlab-ci.yml", ".m2/**"]
+  "ignore": [
+    ".gitlab-ci.yml",
+    ".m2/**",
+    ".github/workflows/osv-scanner-pr.yml",
+    ".github/workflows/osv-scanner.yml"
+  ]
 }
